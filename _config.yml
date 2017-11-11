@@ -1,0 +1,134 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: I am Shubham !
+name: Shubham Kumar
+email: shubh7231@gmail.com
+location: Punjab, India
+company: Panjab University Swami Sarwanand Giri Regional Centre
+company_url: http://ssgpurch.puchd.ac.in
+github_url: https://github.com/shubh7231
+description: This is personnel website of Shubham Kumar
+favicon: favicon.png # Image must be in assets/images
+
+url: http://shubh7231.github.io # the base hostname & protocol for your site
+
+## Gem
+gems:
+  - jekyll-paginate
+  - jekyll-geo-pattern
+  - rouge
+  - kramdown
+  - jekyll-github-metadata
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+
+# Where things are
+collections:
+  my_categories:
+    output: true
+    permalink: /category/:name/
+  my_tags:
+    output: true
+    permalink: /tag/:name/
+  my_snippet:
+    output: true
+    permalink: /snippet/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ""
+      type: my_categories
+    values:
+      layout: category
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: tag
+  -
+    scope:
+      path: ""
+      type: my_snippet
+    values:
+      layout: post
+
+
+source:      .
+destination: ./_site
+
+quiet:    false
+defaults: []
+
+kramdown:
+  input: GFM
+  enable_coderay: true
+
+# Disque
+disque: shubh7231.disqus.com
+
+# Pagination
+paginate: 10
+paginate_path: 'page:num'
+
+# Navigation
+navs:
+  -
+    href: /
+    label: Home
+
+  -
+    href: /project
+    label: Projects
+
+  -
+    href: /blog
+    label: Blog
+
+
+  -
+    href: /about
+    label: About
+  -
+    href: /contact
+    label: Contact
+
+
+# Sidebar to show popular repo
+side_bar_repo_limit: 5 # Number of repos to show
+
+# Google Analytics
+analytics :
+  provider : google
+  google :
+      tracking_id : 'UA-92344118-1'
+
+
+# For about.html. Fell free to create your own!
+skill_software_keywords: [C, C++, Qt, Python]
+skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
+skill_mobile_app_keywords: [Android, Sketch UI Desgin]

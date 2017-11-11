@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
+
+    <title>Steps to Compile and Execute C Program in Linux Using GCC</title>
+    <meta name="description"
+          content="Introduction">
+
+    <link rel="canonical" href="http://localhost:4000/c/2017/02/23/All-about-compiling-and-running-C-programs-on-linux.html">
+    <link rel="alternate" type="application/rss+xml" title="I am Shubham !" href="http://localhost:4000/feed.xml">
+
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Third-Party CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="/bower_components/hover/css/hover-min.css">
+    <link rel="stylesheet" href="/bower_components/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    <!-- CSS set in page -->
+    
+
+    <!-- CSS set in layout -->
+    
+    <link rel="stylesheet" href="/assets/css/sidebar-post-nav.css">
+    
+
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+    <div class="container">
+        <a id="site-header-brand" href="/" title="Shubham Kumar">
+            <span class="octicon octicon-mark-github"></span> Shubham Kumar
+        </a>
+        <nav class="site-header-nav" role="navigation">
+            
+            <a href="/"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Home">
+                Home
+            </a>
+            
+            <a href="/project"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Projects">
+                Projects
+            </a>
+            
+            <a href="/blog"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Blog">
+                Blog
+            </a>
+            
+            <a href="/about"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="About">
+                About
+            </a>
+            
+            <a href="/contact"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Contact">
+                Contact
+            </a>
+            
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <section class="jumbotron geopattern" data-pattern-id="Steps to Compile and Execute C Program in Linux Using GCC">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>Steps to Compile and Execute C Program in Linux Using GCC</h1>
+            <span class="meta-info">
+                
+                
+                <span class="octicon octicon-calendar"></span> 2017/02/23
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="row">
+
+        
+        <div class="col-md-8 markdown-body">
+
+            <h2 id="introduction">Introduction</h2>
+
+<p>Before talking of compiling and running C program in Linux let’s see why C is so popular ever since it was created. He was the Dennis Ritchie who developed C language in 1969 to 1973. C was developed from the beginning as the system programming language for UNIX. Most of the UNIX kernel, and all of its supporting tools and libraries, were written in C. Initially, C was designed to implement the UNIX operating system. Later other folks found it useful for their programs without any hindrance, and they began using it. Even today, C is the first choice for system-level programming. This tutorial explains compilation and execution of C program is in detail.
+Compile C Program in Linux - A Classic example Hello World! :–</p>
+
+<blockquote>
+  <p>#include <stdio.h>
+int main()
+{
+printf("hello, world!\n");
+}
+/* helloworld.c */</stdio.h></p>
+</blockquote>
+
+<p>To compile and run this C program every part of the system has to perform in concert. In order to compile above C program in Linux, we will start right from the creation of the program. The ‘Hello World!’ program starts its life as a source file which is created with help of a text editor and saved as helloworld.c. The helloworld.c program code is stored in a file as a sequence of bytes. Each byte has a value corresponding to some character. The first byte has the value 35 that corresponds to the character ‘#’, for example. Likewise, the second byte has the integer value 105, which corresponds to the character ‘i’, and so on. The idea illustrates that all information in a system is represented as a bunch of bits.</p>
+
+<blockquote>
+  <p>To compile and run the C program helloworld.c, all C statements must be translated individually into a sequence of instructions that a machine can understand. These instructions are then packaged in a form called executable object program. There are other programs which perform this task to get the program running. On a UNIX/Linux system, the translation from source code to object code (executable) is performed by a compiler driver. Here we will compile C program by gcc.</p>
+</blockquote>
+
+<blockquote>
+  <p>The following command (provided that gcc is installed on your Linux box) compiles C program helloworld.c and creates an executable file called helloworld. Don’t forget to set appropriate permissions to helloworld.c, so that you won’t get execute permission errors.</p>
+</blockquote>
+
+<blockquote>
+  <p>[root@host ~]# gcc helloworld.c -o helloworld
+While compiling helloworld.c the gcc compiler reads the source file helloworld.c and translates it into an executable helloworld. The compilation is performed in four sequential phases by the compilation system (a collection of four programs - preprocessor, compiler, assembler, and linker).</p>
+</blockquote>
+
+<h4 id="now-lets-perform-all-four-steps-to-compile-and-run-c-program-one-by-one">Now, let’s perform all four steps to compile and run C program one by one.</h4>
+
+<h3 id="1-preprocessing-">1. Preprocessing :—</h3>
+<blockquote>
+  <p>During compilation of a C program the compilation is started off with preprocessing the directives (e.g., #include and #define). The preprocessor (cpp - c preprocessor) is a separate program in reality, but it is invoked automatically by the compiler. For example, the #include <stdio.h> command in line 1 of helloworld.c tells the preprocessor to read the contents of the system header file stdio.h and insert it directly into the program text. The result is another file typically with the .i suffix. In practice, the preprocessed file is not saved to disk unless the -save-temps option is used.
+This is the first stage of compilation process where preprocessor directives (macros and header files are most common) are expanded. To perform this step gcc executes the following command internally.</stdio.h></p>
+</blockquote>
+
+<blockquote>
+  <p>[root@host ~]# cpp helloworld.c &gt; helloworld.i</p>
+</blockquote>
+
+<blockquote>
+  <p>The result is a file helloworld.i that contains the source code with all macros expanded. If you execute the above command in isolation then the file helloworld.i will be saved to disk and you can see its content by vi or any other editor you have on your Linux system.</p>
+</blockquote>
+
+<h3 id="2-compilation-">2. Compilation :—</h3>
+<blockquote>
+  <p>In this phase compilation proper takes place. The compiler (ccl) translates helloworld.i into helloworld.s. File helloworld.s contains assembly code. You can explicitly tell gcc to translate helloworld.i to helloworld.s by executing the following command.</p>
+</blockquote>
+
+<blockquote>
+  <p>[root@host ~]# gcc -S helloworld.i</p>
+</blockquote>
+
+<blockquote>
+  <p>The command line option -S tells the compiler to convert the preprocessed code to assembly language without creating an object file. After having created helloworld.s you can see the content of this file. While looking at assembly code you may note that the assembly code contains a call to the external function printf.</p>
+</blockquote>
+
+<h3 id="3-assembly-">3. Assembly :—</h3>
+<blockquote>
+  <p>Here, the assembler (as) translates helloworld.s into machine language instructions, and generates an object file helloworld.o. You can invoke the assembler at your own by executing the following command.
+[root@host ~]# as helloworld.s -o helloworld.o
+The above command will generate helloworld.o as it is specified with -o option. And, the resulting file contains the machine instructions for the classic “Hello World!” program, with an undefined reference to printf.</p>
+</blockquote>
+
+<h3 id="4-linking-">4. Linking :—</h3>
+<blockquote>
+  <p>This is the final stage in compilation of “Hello World!” program. This phase links object files to produce final executable file. An executable file requires many external resources (system functions, C run-time libraries etc.). Regarding our “Hello World!” program you have noticed that it calls the printf function to print the ‘Hello World!’ message on console. This function is contained in a separate pre compiled object file printf.o, which must somehow be merged with our helloworld.o file. The linker (ld) performs this task for you. Eventually, the resulting file helloworld is produced, which is an executable. This is now ready to be loaded into memory and executed by the system.</p>
+</blockquote>
+
+<blockquote>
+  <p>[root@host ~]# ./helloworld
+Output:
+hello, world!</p>
+</blockquote>
+
+<blockquote>
+  <p>The entire linking process is handled transparently by gcc when invoked, as follows.
+[root@host ~]# gcc helloworld.c -o helloworld</p>
+</blockquote>
+
+<blockquote>
+  <p>During the whole compilation process there are other files also in role along with the source code file. If you see the very first statement of helloworld.c it is #include <stdio.h> (includes header file). Likewise, while compiling a C program you have to work with following types of files.</stdio.h></p>
+</blockquote>
+
+<h2 id="program-translation">Program Translation</h2>
+
+<h3 id="source-code-files">Source code files</h3>
+<blockquote>
+  <p>These files contain high level program code which can be read and understood by programmers. Such files carry .c extension by convention.</p>
+</blockquote>
+
+<h3 id="header-files">Header files</h3>
+<blockquote>
+  <p>These types of files contain function declarations (also known as function prototypes) and various preprocessor statements. They are used to allow source code files to access externally-defined functions. As a convention header files have .h extension.</p>
+</blockquote>
+
+<h3 id="object-files">Object files</h3>
+<blockquote>
+  <p>These files are produced as an intermediate output by the gcc compiler during program compilation. They consist of function definitions in binary form, but they are not executable by themselves. Object files end with .o extension by convention (on UNIX like operating systems), although on some operating systems e.g., Windows, and MS-DOS they often end in .obj.</p>
+</blockquote>
+
+<h3 id="binary-executables">Binary executables</h3>
+<blockquote>
+  <p>These are produced as the output of a program called a linker. During the process of compiling and running C program the linker links together a number of object files to produce a binary file which can be directly executed. Binary executables have no special suffix on UNIX like operating systems, while they generally have .exe on Windows.
+Along with above four types of files, while compiling a C program you can come across .a and .so, static and shared libraries respectively, but you would not normally deal with them directly.</p>
+</blockquote>
+
+<h4 id="last-word">Last Word</h4>
+<blockquote>
+  <p>In this article I explained compilation and execution process steps and stages of C program in Linux using gcc . Various phases during compilation and execution process of a C program take place, such as, preprocessing, compilation, assembly, and linking. Hope you have enjoyed reading this article. Please write us if you have any suggestion/comment or come across any error on this page. Thanks for reading!</p>
+</blockquote>
+
+
+            <!-- Comments -->
+            
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//rahul-kumar-2.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+        </div>
+
+        <div class="col-md-4">
+            <h3>Post Directory</h3>
+<div id="post-directory-module">
+<section class="post-directory">
+    <!-- Links that trigger the jumping -->
+    <!-- Added by javascript below -->
+    <dl></dl>
+</section>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( "article h2" ).each(function( index ) {
+            $(".post-directory dl").append("<dt><a class=\"jumper\" hre=#" +
+                    $(this).attr("id")
+                    + ">"
+                    + $(this).text()
+                    + "</a></dt>");
+
+            var children = $(this).nextUntil("h2", "h3")
+
+            children.each(function( index ) {
+                $(".post-directory dl").append("<dd><a class=\"jumper\" hre=#" +
+                        $(this).attr("id")
+                        + ">"
+                        + "&nbsp;&nbsp;- " + $(this).text()
+                        + "</a></dd>");
+            });
+        });
+
+        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+        $(window).scroll(function() {                  // assign scroll event listener
+
+            var currentScroll = $(window).scrollTop(); // get current position
+
+            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                $('#post-directory-module').css({      // scroll to that element or below it
+                    top: '100px',
+                    position: 'fixed',
+                    width: 'inherit'
+                });
+            } else {                                   // apply position: static
+                $('#post-directory-module').css({      // if you scroll above it
+                    position: 'inherit',
+                    width: 'inherit'
+                });
+            }
+
+        });
+
+        $("a.jumper").on("click", function( e ) {
+
+            e.preventDefault();
+
+            $("body, html").animate({
+                scrollTop: ($( $(this).attr('hre') ).offset().top - 100)
+            }, 600);
+
+        });
+    });
+
+</script>
+        </div>
+        
+
+    </div>
+
+</article>
+
+        </div>
+
+    <footer class="container">
+
+    <div class="site-footer">
+
+        <div class="copyright pull-left">
+            <!-- 请不要更改这一行 方便其他人知道模板的来源 谢谢 -->
+            <!-- Please keep this line to let others know where this theme comes from. Thank you :D -->
+            Power by <a href="https://github.com/DONGChuan/Yummy-Jekyll">Yummy Jekyll</a>
+        </div>
+
+        <a href="https://github.com/DONGChuan" target="_blank" aria-label="view source code">
+            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+        </a>
+
+        <div class="pull-right">
+            <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+        </div>
+
+    </div>
+
+    <!-- Third-Party JS -->
+    <script type="text/javascript" src="/bower_components/geopattern/js/geopattern.min.js"></script>
+
+    <!-- My JS -->
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+
+    
+
+    
+    <!-- Google Analytics -->
+    <div style="display:none">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-92344118-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    </div>
+    
+
+</footer>
+
+
+    </body>
+
+</html>

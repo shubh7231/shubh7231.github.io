@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>I am Shubham !</title>
+    <description>This is personnel website of Shubham Kumar</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 11 Nov 2017 18:15:42 +0530</pubDate>
+    <lastBuildDate>Sat, 11 Nov 2017 18:15:42 +0530</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Machine Learning Keyword Explained</title>
+        <description>&lt;p&gt;As I have started learning about &lt;strong&gt;MACHINE LEARNING&lt;/strong&gt;, I gathered some key terms of ML with future iterations likely to include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deep Learning&lt;/li&gt;
+  &lt;li&gt;Natural Language Processing&lt;/li&gt;
+  &lt;li&gt;Data Mining and Data Science&lt;/li&gt;
+  &lt;li&gt;Other interesting topics we can think of :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not enough information provided in these definitions for you? No worries, since each term listed links to related posts on wikipedea for further investigation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/ml-wordcloud.jpg&quot; alt=&quot;ML wordcloud&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, let’s start with a look at machine learning and related topics.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-machine-learning&quot;&gt;1. Machine Learning&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.cs.cmu.edu/~tom/mlbook.html&quot;&gt;According to Mitchell&lt;/a&gt;, machine learning is “concerned with the question of how to construct computer programs that automatically improve with experience.” Machine learning is interdisciplinary in nature, and employs techniques from the fields of computer science, statistics, and artificial intelligence, among others. The main artefacts of machine learning research are algorithms which facilitate this automatic improvement from experience, algorithms which can be applied in such diverse fields as computer vision, artificial intelligence, and data mining.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-classification&quot;&gt;2. Classification&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Classification is concerned with building models that separate data into distinct classes. These models are built by inputting a set of training data for which the classes are pre-labelled in order for the algorithm to learn from. The model is then used by inputting a different dataset for which the classes are withheld, allowing the model to predict their class membership based on what it has learned from the training set. Well-known classification schemes include &lt;strong&gt;decision trees&lt;/strong&gt; and &lt;strong&gt;support vector machines&lt;/strong&gt;. As this type of algorithm requires explicit class labelling, classification is a form of &lt;strong&gt;supervised learning&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;3-regression&quot;&gt;3. Regression&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Regression is very closely related to classification. While classification is concerned with the prediction of discrete classes, regression is applied when the “class” to be predicted is made up of continuous numerical values. &lt;strong&gt;Linear regression&lt;/strong&gt; is an example of a regression technique.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;4-clustering&quot;&gt;4. Clustering&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Clustering is used for analyzing data which does not include pre-labeled classes, or even a class attribute at all. Data instances are grouped together using the concept of “maximizing the intraclass similarity and minimizing the interclass similarity,” as concisely described by &lt;a href=&quot;http://hanj.cs.illinois.edu/bk3/&quot;&gt;Han, Kamber &amp;amp; Pei&lt;/a&gt;. This translates to the clustering algorithm identifying and grouping instances which are very similar, as opposed to ungrouped instances which are much less-similar to one another. &lt;strong&gt;k-means&lt;/strong&gt; clustering is perhaps the most well-known example of a clustering algorithm. As clustering does not require the pre-labeling of instance classes, it is a form of &lt;strong&gt;unsupervised learning&lt;/strong&gt;, meaning that it learns by observation as opposed to learning by example.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/clusters.jpg&quot; alt=&quot;Clusters&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-association&quot;&gt;5. Association&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Association is most easily explained by introducing market basket analysis, a typical task for which it is well-known. Market basket analysis attempts to identify associations between the various items that have been chosen by a particular shopper and placed in their market basket, be it real or virtual, and assigns support and confidence measures for comparison. The value of this lies in cross-marketing and customer behavior analysis. Association is a generalization of market basket analysis, and is similar to classification except that any attribute can be predicted in association. &lt;strong&gt;Apriori&lt;/strong&gt; enjoys success as the most well-known example of an association algorithm. Association is another example of &lt;strong&gt;unsupervised learning&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;6-decision-trees&quot;&gt;6. Decision Trees&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Decision trees are top-down, recursive, divide-and-conquer classifiers. Decision trees are generally composed of 2 main tasks: tree induction and tree pruning. Tree induction is the task of taking a set of pre-classified instances as input, deciding which attributes are best to split on, splitting the dataset, and recursing on the resulting split datasets until all training instances are categorized. While building our tree, the goal is to split on the attributes which create the purest child nodes possible, which would keep to a minimum the number of splits that would need to be made in order to classify all instances in our dataset. This purity is measured by the concept of information, which relates to how much would need to be known about a previously-unseen instance in order for it to be properly classified.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A completed decision tree model can be overly-complex, contain unnecessary structure, and be difficult to interpret. Tree pruning is the process of removing the unnecessary structure from a decision tree in order to make it more efficient, more easily-readable for humans, and more accurate as well. This increased accuracy is due to pruning’s ability to reduce overfitting.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;7-support-vector-machines&quot;&gt;7. Support Vector Machines&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SVMs are able to classify both linear and nonlinear data. SMVs work by transforming the training dataset into a higher dimension, a higher dimension which is then inspected for the optimal separation boundary, or boundaries, between classes. In SVMs, these boundaries are referred to as hyperplanes, which are identified by locating support vectors, or the instances that most essentially define classes, and their margins, which are the lines parallel to the hyperplane defined by the shortest distance between a hyperplane and its support vectors.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The grand idea with SVMs is that, with a high enough number of dimensions, a hyperplane separating 2 classes can always be found, thereby delineating dataset member classes. When repeated a sufficient number of times, enough hyperplanes can be generated to separate all classes in n-dimension space.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/support-vector.png&quot; alt=&quot;SVM&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;8-neural-networks&quot;&gt;8. Neural Networks&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Neural networks are algorithms inspired by the biological brain, although the extent to which they capture actual brain functionality is highly controversial, and claims that they model the biological brain are patently false. Neural networks are made up of numerous interconnected conceptualized artificial neurons, which pass data between themselves, and which have associated weights which are tuned based upon the newtork’s “experience.” Neurons have activation thresholds which, if met by a combination of their associated weights and data passed to them, are fired; combinations of fired neurons result in “learning.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;9-deep-learning&quot;&gt;9. Deep Learning&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Deep learning is a relatively new term, although it has existed prior to the dramatic uptick in online searches of late. Enjoying a surge in research and industry, due mainly to its incredible successes in a number of different areas, deep learning is the process of applying deep neural network technologies - that is, neural network architectures with multiple hidden layers of neurons - to solve problems. Deep learning is a process, like data mining, which employs deep neural network architectures, which are particular types of machine learning algorithms.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/cnn-architecture.jpg&quot; alt=&quot;Deep learning&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;10-reinforcement-learning&quot;&gt;10. Reinforcement Learning&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://research.microsoft.com/en-us/um/people/cmbishop/prml/&quot;&gt;Bishop&lt;/a&gt; best describes reinforcement learning in a single concise sentence: “Reinforcement learning is concerned with the problem of finding suitable actions to take in a given situation in order to maximize a reward.” Reinforcement algorithms are not given explicit goals; instead, they are forced to learn these optimal goals by trial and error. Think of the classic Mario Bros. video game; reinforcement learning algorithms would, by trial and error, determine that certain movements and button pushes would advance the player’s standing in the game, and trial and error would aim to result in an optimal state of game play.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;11-k-fold-cross-validation&quot;&gt;11. (k-fold) Cross-validation&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Cross-validation is a deterministic method for model building, achieved by leaving out one of k segments, or folds, of a dataset, training on all k-1 segments, and using the remaining kth segment for testing; this process is then repeated k times, with the individual prediction error results being combined and averaged in a single, integrated model. This provides variability, with the goal of producing the most accurate predictive models possible.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;12-bayesian&quot;&gt;12. Bayesian&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When referring to probability, there are 2 major schools of thought: classical, or frequentist, probability interpretation views probabilities in terms of the frequencies of random events. In somewhat of a contrast, the Bayesian view of probability aims to quantify uncertainty, and updates a given probability as additional evidence is available. If these probabilities are extended to truth values, and are assigned to hypotheses, we then have “learning” to varying degrees of certainty.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 11 Mar 2017 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/machine%20learning/2017/03/11/Machine-learning-key-terms-explained.html</link>
+        <guid isPermaLink="true">http://localhost:4000/machine%20learning/2017/03/11/Machine-learning-key-terms-explained.html</guid>
+        
+        <category>Machine Learning</category>
+        
+        <category>C</category>
+        
+        
+        <category>Machine Learning</category>
+        
+      </item>
+    
+      <item>
+        <title>What Is The Difference Between Artificial Intelligence And Machine Learning?</title>
+        <description>&lt;p&gt;Artificial Intelligence (AI) and Machine Learning (ML) are two very hot buzzwords right now, and often seem to be used interchangeably.&lt;/p&gt;
+
+&lt;p&gt;They are not quite the same thing, but the perception that they are can sometimes lead to some confusion. So I thought it would be worth writing a piece to explain the difference.&lt;/p&gt;
+
+&lt;p&gt;Both terms crop up very frequently when the topic is Big Data, analytics, and the broader waves of technological change which are sweeping through our world.&lt;/p&gt;
+
+&lt;p&gt;In short, the best answer is that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Artificial Intelligence is the broader concept of machines being able to carry out tasks in a way that we would consider “smart”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Machine Learning is a current application of AI based around the idea that we should really just be able to give machines access to data and let them learn for themselves.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;early-days&quot;&gt;Early Days&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Artificial Intelligence has been around for a long time – the Greek myths contain stories of mechanical men designed to mimic our own behavior. Very early European computers were conceived as “logical machines” and by reproducing capabilities such as basic arithmetic and memory, engineers saw their job, fundamentally, as attempting to create mechanical brains.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;As technology, and, importantly, our understanding of how our minds work, has progressed, our concept of what constitutes AI has changed. Rather than increasingly complex calculations, work in the field of AI concentrated on mimicking human decision making processes and carrying out tasks in ever more human ways.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Artificial Intelligences – devices designed to act intelligently – are often classified into one of two fundamental groups – applied or general. Applied AI is far more common – systems designed to intelligently trade stocks and shares, or manoeuvre an autonomous vehicle would fall into this category.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Neural Networks - Artificial Intelligence And Machine Learning (Source: Shutterstock)&lt;/p&gt;
+
+&lt;p&gt;Generalized AIs – systems or devices which can in theory handle any task – are less common, but this is where some of the most exciting advancements are happening today. It is also the area that has led to the development of Machine Learning. Often referred to as a subset of AI, it’s really more accurate to think of it as the current state-of-the-art.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-rise-of-machine-learning&quot;&gt;The Rise of Machine Learning&lt;/h3&gt;
+
+&lt;p&gt;Two important breakthroughs led to the emergence of Machine Learning as the vehicle which is driving AI development forward with the speed it currently has.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;One of these was the realization – credited to Arthur Samuel in 1959 – that rather than teaching computers everything they need to know about the world and how to carry out tasks, it might be possible to teach them to learn for themselves.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The second, more recently, was the emergence of the internet, and the huge increase in the amount of digital information being generated, stored, and made available for analysis.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Once these innovations were in place, engineers realized that rather than teaching computers and machines how to do everything, it would be far more efficient to code them to think like human beings, and then plug them into the internet to give them access to all of the information in the world.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;neural-networks&quot;&gt;Neural Networks&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The development of neural networks has been key to teaching computers to think and understand the world in the way we do, while retaining the innate advantages they hold over us such as speed, accuracy and lack of bias.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A Neural Network is a computer system designed to work by classifying information in the same way a human brain does. It can be taught to recognize, for example, images, and classify them according to elements they contain.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Essentially it works on a system of probability – based on data fed to it, it is able to make statements, decisions or predictions with a degree of certainty. The addition of a feedback loop enables “learning” – by sensing or being told whether its decisions are right or wrong, it modifies the approach it takes in the future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Machine Learning applications can read text and work out whether the person who wrote it is making a complaint or offering congratulations. They can also listen to a piece of music, decide whether it is likely to make someone happy or sad, and find other pieces of music to match the mood. In some cases, they can even compose their own music expressing the same themes, or which they know is likely to be appreciated by the admirers of the original piece.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;These are all possibilities offered by systems based around ML and neural networks. Thanks in no small part to science fiction, the idea has also emerged that we should be able to communicate and interact with electronic devices and digital information, as naturally as we would with another human being. To this end, another field of AI – Natural Language Processing (NLP) – has become a source of hugely exciting innovation in recent years, and one which is heavily reliant on ML.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;NLP applications attempt to understand natural human communication, either written or spoken, and communicate in return with us using similar, natural language. ML is used here to help machines understand the vast nuances in human language, and to learn to respond in a way that a particular audience is likely to comprehend.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;a-case-of-branding&quot;&gt;A Case Of Branding?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Artificial Intelligence – and in particular today ML certainly has a lot to offer. With its promise of automating mundane tasks as well as offering creative insight, industries in every sector from banking to healthcare and manufacturing are reaping the benefits. So, it’s important to bear in mind that AI and ML are something else … they are products which are being sold – consistently, and lucratively.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Machine Learning has certainly been seized as an opportunity by marketers. After AI has been around for so long, it’s possible that it started to be seen as something that’s in some way “old hat”  even before its potential has ever truly been achieved. There have been a few false starts along the road to the “AI revolution”, and the term Machine Learning certainly gives marketers something new, shiny and, importantly, firmly grounded in the here-and-now, to offer.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The fact that we will eventually develop human-like AI has often been treated as something of an inevitability by technologists. Certainly, today we are closer than ever and we are moving towards that goal with increasing speed. Much of the exciting progress that we have seen in recent years is thanks to the fundamental changes in how we envisage AI working, which have been brought about by ML.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hope this piece has helped a few people understand the distinction between AI and ML.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Mar 2017 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/artificial%20intelligence/2017/03/07/What-Is-The-Difference-Between-Artificial-Intelligence-And-Machine-Learning_.html</link>
+        <guid isPermaLink="true">http://localhost:4000/artificial%20intelligence/2017/03/07/What-Is-The-Difference-Between-Artificial-Intelligence-And-Machine-Learning_.html</guid>
+        
+        <category>Diffrence</category>
+        
+        <category>Artificial Intelligence</category>
+        
+        <category>Machine Learning</category>
+        
+        
+        <category>Artificial Intelligence</category>
+        
+      </item>
+    
+      <item>
+        <title>Steps to Compile and Execute C Program in Linux Using GCC</title>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Before talking of compiling and running C program in Linux let’s see why C is so popular ever since it was created. He was the Dennis Ritchie who developed C language in 1969 to 1973. C was developed from the beginning as the system programming language for UNIX. Most of the UNIX kernel, and all of its supporting tools and libraries, were written in C. Initially, C was designed to implement the UNIX operating system. Later other folks found it useful for their programs without any hindrance, and they began using it. Even today, C is the first choice for system-level programming. This tutorial explains compilation and execution of C program is in detail.
+Compile C Program in Linux - A Classic example Hello World! :–&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;#include &lt;stdio.h&gt;
+int main()
+{
+printf(&quot;hello, world!\n&quot;);
+}
+/* helloworld.c */&lt;/stdio.h&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To compile and run this C program every part of the system has to perform in concert. In order to compile above C program in Linux, we will start right from the creation of the program. The ‘Hello World!’ program starts its life as a source file which is created with help of a text editor and saved as helloworld.c. The helloworld.c program code is stored in a file as a sequence of bytes. Each byte has a value corresponding to some character. The first byte has the value 35 that corresponds to the character ‘#’, for example. Likewise, the second byte has the integer value 105, which corresponds to the character ‘i’, and so on. The idea illustrates that all information in a system is represented as a bunch of bits.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;To compile and run the C program helloworld.c, all C statements must be translated individually into a sequence of instructions that a machine can understand. These instructions are then packaged in a form called executable object program. There are other programs which perform this task to get the program running. On a UNIX/Linux system, the translation from source code to object code (executable) is performed by a compiler driver. Here we will compile C program by gcc.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The following command (provided that gcc is installed on your Linux box) compiles C program helloworld.c and creates an executable file called helloworld. Don’t forget to set appropriate permissions to helloworld.c, so that you won’t get execute permission errors.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[root@host ~]# gcc helloworld.c -o helloworld
+While compiling helloworld.c the gcc compiler reads the source file helloworld.c and translates it into an executable helloworld. The compilation is performed in four sequential phases by the compilation system (a collection of four programs - preprocessor, compiler, assembler, and linker).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;now-lets-perform-all-four-steps-to-compile-and-run-c-program-one-by-one&quot;&gt;Now, let’s perform all four steps to compile and run C program one by one.&lt;/h4&gt;
+
+&lt;h3 id=&quot;1-preprocessing-&quot;&gt;1. Preprocessing :—&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;During compilation of a C program the compilation is started off with preprocessing the directives (e.g., #include and #define). The preprocessor (cpp - c preprocessor) is a separate program in reality, but it is invoked automatically by the compiler. For example, the #include &lt;stdio.h&gt; command in line 1 of helloworld.c tells the preprocessor to read the contents of the system header file stdio.h and insert it directly into the program text. The result is another file typically with the .i suffix. In practice, the preprocessed file is not saved to disk unless the -save-temps option is used.
+This is the first stage of compilation process where preprocessor directives (macros and header files are most common) are expanded. To perform this step gcc executes the following command internally.&lt;/stdio.h&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[root@host ~]# cpp helloworld.c &amp;gt; helloworld.i&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The result is a file helloworld.i that contains the source code with all macros expanded. If you execute the above command in isolation then the file helloworld.i will be saved to disk and you can see its content by vi or any other editor you have on your Linux system.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;2-compilation-&quot;&gt;2. Compilation :—&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;In this phase compilation proper takes place. The compiler (ccl) translates helloworld.i into helloworld.s. File helloworld.s contains assembly code. You can explicitly tell gcc to translate helloworld.i to helloworld.s by executing the following command.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[root@host ~]# gcc -S helloworld.i&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The command line option -S tells the compiler to convert the preprocessed code to assembly language without creating an object file. After having created helloworld.s you can see the content of this file. While looking at assembly code you may note that the assembly code contains a call to the external function printf.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;3-assembly-&quot;&gt;3. Assembly :—&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Here, the assembler (as) translates helloworld.s into machine language instructions, and generates an object file helloworld.o. You can invoke the assembler at your own by executing the following command.
+[root@host ~]# as helloworld.s -o helloworld.o
+The above command will generate helloworld.o as it is specified with -o option. And, the resulting file contains the machine instructions for the classic “Hello World!” program, with an undefined reference to printf.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;4-linking-&quot;&gt;4. Linking :—&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;This is the final stage in compilation of “Hello World!” program. This phase links object files to produce final executable file. An executable file requires many external resources (system functions, C run-time libraries etc.). Regarding our “Hello World!” program you have noticed that it calls the printf function to print the ‘Hello World!’ message on console. This function is contained in a separate pre compiled object file printf.o, which must somehow be merged with our helloworld.o file. The linker (ld) performs this task for you. Eventually, the resulting file helloworld is produced, which is an executable. This is now ready to be loaded into memory and executed by the system.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[root@host ~]# ./helloworld
+Output:
+hello, world!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The entire linking process is handled transparently by gcc when invoked, as follows.
+[root@host ~]# gcc helloworld.c -o helloworld&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;During the whole compilation process there are other files also in role along with the source code file. If you see the very first statement of helloworld.c it is #include &lt;stdio.h&gt; (includes header file). Likewise, while compiling a C program you have to work with following types of files.&lt;/stdio.h&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;program-translation&quot;&gt;Program Translation&lt;/h2&gt;
+
+&lt;h3 id=&quot;source-code-files&quot;&gt;Source code files&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;These files contain high level program code which can be read and understood by programmers. Such files carry .c extension by convention.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;header-files&quot;&gt;Header files&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;These types of files contain function declarations (also known as function prototypes) and various preprocessor statements. They are used to allow source code files to access externally-defined functions. As a convention header files have .h extension.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;object-files&quot;&gt;Object files&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;These files are produced as an intermediate output by the gcc compiler during program compilation. They consist of function definitions in binary form, but they are not executable by themselves. Object files end with .o extension by convention (on UNIX like operating systems), although on some operating systems e.g., Windows, and MS-DOS they often end in .obj.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;binary-executables&quot;&gt;Binary executables&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;These are produced as the output of a program called a linker. During the process of compiling and running C program the linker links together a number of object files to produce a binary file which can be directly executed. Binary executables have no special suffix on UNIX like operating systems, while they generally have .exe on Windows.
+Along with above four types of files, while compiling a C program you can come across .a and .so, static and shared libraries respectively, but you would not normally deal with them directly.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;last-word&quot;&gt;Last Word&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;In this article I explained compilation and execution process steps and stages of C program in Linux using gcc . Various phases during compilation and execution process of a C program take place, such as, preprocessing, compilation, assembly, and linking. Hope you have enjoyed reading this article. Please write us if you have any suggestion/comment or come across any error on this page. Thanks for reading!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 23 Feb 2017 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/c/2017/02/23/All-about-compiling-and-running-C-programs-on-linux.html</link>
+        <guid isPermaLink="true">http://localhost:4000/c/2017/02/23/All-about-compiling-and-running-C-programs-on-linux.html</guid>
+        
+        <category>C</category>
+        
+        <category>GCC</category>
+        
+        
+        <category>C</category>
+        
+      </item>
+    
+      <item>
+        <title>Why do you want to do great things</title>
+        <description>&lt;p&gt;Why do you want to do great things? Seriously, dig into it. When I ask a lot of people in startups this question and dig long enough, it comes down to money– they want to be rich, they want to be free.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Fact: I’ve met these rich/free people and they are largely working their asses off to get more rich (and presumably more free?). The ones who make it (largely) LOVE THE GAME. The few who get rich somehow but don’t actually love the game of getting rich are listlessly complaining about being unhappy.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You don’t love the game, it seems. The way to be happy/satisfied is to find the game that you love or learn to love the game you’re playing. The latter is often what to focus on– there people with much less interesting jobs that are satisfied with them. Whatever job you have, figure out how to be freakin’ awesome at it and opportunities fall into your lap- trust me. Or be the guy who gets by, can’t be happy, is always looking out the window.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;All that said, don’t settle for a shitty job. Get one where you’re surrounded by people who impress you in an industry/market that has potential. That’s where you’ll find your next co-founder.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you’ve got great ideas, start side projects. They turn into businesses all the time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Reduce your burn rate ruthlessly and save $. Seriously, your car/house/clothes are too nice, and you have them because society makes you feel less successful if you don’t. Happiness and stuff have virtually no correlation. Get to the point where you’re downright smug about your burn rate. Smirk at people who drive BMWs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Remember that a million years of evolution has made humanity naturally discontent– do you think happiness/contentedness is a survival trait? Add to that the external pressure of peers who make it big, do “great things”, and the river of marketing telling you that you need fancier watches, shinier cars, the newest iPhone. Being happy/content takes smarts and discipline that most people simply can’t manage. Be one of the ones who can.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Keep doing what you love&lt;/li&gt;
+  &lt;li&gt;Reduce your burn rate ruthlessly&lt;/li&gt;
+  &lt;li&gt;Save money&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Being happy/content takes smarts and discipline that most people simply can’t manage. Be one of the ones who can.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 04 Feb 2017 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/life/2017/02/04/Why-do-you-want-to-do-great-things.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2017/02/04/Why-do-you-want-to-do-great-things.html</guid>
+        
+        <category>Tips</category>
+        
+        <category>Life</category>
+        
+        
+        <category>Life</category>
+        
+      </item>
+    
+  </channel>
+</rss>

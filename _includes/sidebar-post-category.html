@@ -1,0 +1,27 @@
+<ul class="list-group">
+    <a href="/category" class="list-group-item">
+        <i class="fa fa-archive fa-fw" aria-hidden="true"></i> <h3 class="sidebar-title">Blog Categories</h3>
+    </a>
+<div id="blog-categories">
+    {% for category in site.categories | limit: 5 %}
+    <a class="list-group-item" href="/category">
+        {{ category | first }}
+        <span class="badge pull-right">{{ category[1].size }}</span>
+    </a>
+    {% endfor %}
+    {% if site.categories.size > 5 %}
+    <a class="list-group-item" href="/category">
+        &nbsp;
+        <span class="pull-right">More...</span>
+    </a>
+    {% endif %}
+</div>
+</ul>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#blog-categories li").css('text-transform','capitalize')
+    });
+
+</script>
+

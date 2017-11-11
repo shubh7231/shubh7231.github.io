@@ -1,0 +1,54 @@
+---
+layout: page
+menu: Tags
+---
+<div class="col-md-8">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tag">tags</a></li>
+        <li class="active">{{ page.title }}</li>
+    </ol>
+    {% assign alltags = site.tags[page.slug] %}
+    {% unless alltags %}
+    {% assign alltags = ''| split:',' %}
+    {% endunless %}
+    {% for snippet in site.my_snippet %}
+    {% for tag in snippet.tags %}
+    {% if tag == page.slug %}
+    {% assign alltags = alltags | push: snippet %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    {% if alltags %}
+    {% assign alltags = alltags | sort: 'date' | reverse %}
+    {% for post in alltags %}
+    <div class="panel panel-default">
+        <div class="panel-top">
+            <a href="{{ post.url }}">
+                <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i> {{ post.title }}
+            </a>
+            <small> —— {{ post.date | date: "%Y-%m-%d" }}</small>
+        </div>
+
+        <div class="panel-body">
+            {{ post.excerpt | strip_html | strip }}
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p><i class="fa fa-meh-o fa-fw" aria-hidden="true"></i> There are no posts in this tag.</p>
+    {% endif %}
+</div>
+<div class="col-md-4">
+    <div class="btn-label">
+        <div class="paper-title"> Tag Cloud</div>
+        {% for tag in site.my_tags %}
+        {% if site.tags[tag.slug].size > 0 %}
+        <a href="/tag/{{tag.slug}}" class="btn btn-default">
+            {{ tag.name }}({{site.tags[tag.slug].size|default:0}})
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{% if page.title %}{{ page.title | escape }} - {{ site.title}}{% else %}{{ site.title | escape }}{% endif
+        %}</title>
+    {% seo title=false %}
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="bookmark" href="/favicon.ico">
+    {% feed_meta %}
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="{{site.url}}/resources/syntax/shCoreDefault.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/pattern.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/github.css">
+    {% for css in page.romotecss %}
+    <link rel="stylesheet" href="{{site.url}}{{css}}">
+    {% endfor %}
+    <script type="text/javascript" src="/components/jquery/jquery-1.12.4.min.js"></script>
+    {% for javascript in page.romotejs %}
+    <script src="{{site.url}}{{javascript}}"></script>
+    {% endfor %}
+</head>
+<body>
+{% include header.html %}
+{% include jumbotron-post.html %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" id="github-main">
+            {{ content }}
+            {% if site.related_posts.size >= 1 %}
+            <hr/>
+            <div>
+                <h3>Related Posts</h3>
+                <ul class="fa-ul">
+                    {% for related_post in site.related_posts limit: 5 %}
+                    <li><i class="fa-li fa fa-hand-o-right"></i>
+                        <a href="{{ related_post.url }}">{{ related_post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if page.categories %}
+            {% assign category = page.categories[0] %}
+            {% assign posts = site.categories[category] %}
+            {% for post in posts %}
+            {% if post.url == page.url %}
+            {% assign post_index0 = forloop.index0 %}
+            {% assign post_index1 = forloop.index %}
+            {% endif %}
+            {% endfor %}
+            {% for post in posts %}
+            {% if post_index0 == forloop.index %}
+            {% assign next_post = post %}
+            {% endif %}
+            {% if post_index1 == forloop.index0 %}
+            {% assign prev_post = post %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            <nav>
+                <ul class="pager">
+                    {% if prev_post %}
+                    <li class="previous">
+                        <a href="{{ prev_post.url }}">
+                            <span aria-hidden="true">&larr;</span> Previous
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="previous disabled">
+                        <a href="javascript:void(0)">
+                            <span aria-hidden="true">&larr;</span> Previous
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if next_post %}
+                    <li class="next">
+                        <a href="{{ next_post.url }}">Next
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="next disabled">
+                        <a href="javascript:void(0)">Next
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <hr/>
+            <script type="text/javascript" src="{{site.url}}/resources/syntax/shCore.js"></script>
+            <script type="text/javascript" src="{{site.url}}/resources/syntax/shBrushJScriptAndXml.js"></script>
+            <script type="text/javascript">
+                $("[id^=demo]").each(function () {
+                    var demo = $(this).parent();
+                    demo.append($("<pre type='syntaxhighlighter' class='brush: js;html-script: true;collapse: true;class-name: paper-code;'>"
+                            + demo.html() + "</pre>"));
+                });
+                $("[id^=js]").each(function (i) {
+                    var index = this.id.substring(2, this.id.length);
+                    $("#demo" + index).parent().append($("<div class='paper-div'>&nbsp;Javascript Source</div>"
+                            + "<pre type='syntaxhighlighter' class='brush: js;class-name: paper-code; toolbar: false'>"
+                            + $(this).text().replace(/</g, '&lt;') + "</pre>"));
+                });
+                SyntaxHighlighter.config.strings.expandSource = "Click To Expand Html Source";
+                SyntaxHighlighter.all();
+            </script>
+            {% unless site.easydebug %}
+            {% include disqus-comments.html %}
+            {% endunless %}
+        </div>
+        <div class="col-md-3">
+            {% include github-dir-sidebar.html %}
+        </div>
+    </div>
+</div>
+</div>
+{% include footer.html %}
+</body>
+</html>
+
+

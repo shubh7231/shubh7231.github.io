@@ -1,0 +1,40 @@
+---
+layout: page
+title: All My Tags
+menu: Tags
+---
+<div class="col-md-12">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">{{ page.title }}</li>
+    </ol>
+    <div class="btn-label" id="post-tags" style="display: none">
+        <div class="paper-title"><i class="fa fa-tags fa-fw" aria-hidden="true"></i> Tags</div>
+        {% for tag in site.tags %}
+        <a href="/tag/{{ tag[0] | slugify }}" data-tag="{{ tag[0] | slugify }}" class="btn btn-default">
+            {{ tag[0] }}(<span>{{ tag[1].size }}</span>)
+        </a>
+        {% endfor %}
+    </div>
+    <div id="snippet-tags" class="hide">
+        {% for snippet in site.my_snippet %}
+        {% for tag in snippet.tags %}
+        <span>{{ tag }}</span>
+        {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+<script>
+    var postTags = $("#post-tags");
+    $("#snippet-tags").find("span").each(function () {
+        var taga = postTags.find("a[data-tag=" + this.textContent + "]");
+        if (taga.length > 0) {
+            var s = taga.find("span");
+            s.text(1 + Number(s.text() || 0))
+        } else {
+            postTags.append('<a href="/tag/' + this.textContent + '" data-tag="' + this.textContent
+                    + '" class="btn btn-default">' + this.textContent + '(<span>1</span>)</a>')
+        }
+    }).remove();
+    postTags.show();
+</script>
